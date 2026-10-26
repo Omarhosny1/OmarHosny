@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080a09" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <script defer>
+    (function () {
+      try {
+        var stored = localStorage.getItem("theme");
+        var theme =
+          stored === "light" || stored === "dark"
+            ? stored
+            : window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
+        var root = document.documentElement;
+        root.classList.toggle("light", theme === "light");
+        root.classList.toggle("dark", theme === "dark");
+        root.style.colorScheme = theme;
+      } catch (e) { }
+    })();
+  </script>
+
+  <title>Omar Mohamed Hosny — Front-End Developer</title>
+  <meta name="description"
+    content="Omar Mohamed Hosny — Front-End Developer building modern, responsive, and high-performance web experiences with React and Next.js." />
+  <meta name="author" content="Omar Mohamed Hosny" />
+  <meta name="keywords"
+    content="Omar Mohamed Hosny, Front-End Developer, React Developer, Next.js Developer, JavaScript, TypeScript, Tailwind CSS, Portfolio" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Omar Mohamed Hosny — Front-End Developer" />
+  <meta property="og:description"
+    content="Building modern, responsive, and high-performance web experiences with React and Next.js." />
+  <meta name="twitter:card" content="summary_large_image" />
+
+
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
